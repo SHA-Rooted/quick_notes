@@ -5,3 +5,4 @@
 ### [Sql commands or query](sql-command.md)
 
 ### To making your reverse shell Fully [Interactive](Stty-shell.md)
+### Still working on it but few [bash tricks](Bash_tricks.md) with is useful for me.
