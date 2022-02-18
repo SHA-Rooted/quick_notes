@@ -13,11 +13,43 @@ ${IFS} = space 			to do fast  - echo 'ping -c 1 10.10.14.6'| sed 's/ /${IFS}/g'
 ```
 
 
-## Bad inter error
+### Bad inter error
 ```bash
 
 sed -i -e 's/\r$//' file
 
+```
+### To remove space from wordlist 
+```bash
+  sed 's/[[:space:]]//g' input.txt > no-spaces.txt
+```
+
+### wordlist to remove all none compatible WPA word-lengths (8-63)
+```bash
+cat yourwordlistfile | pw-inspector -m 8 -M 30 > yournewfile
+```
+> This will cut out all words that are NOT 8 - 30 letters in length and put them in "yournewfile". I know the max WPA length is 63 but 30 is more realistic for a potential password
+
+
+### To remove all html ****, white space and none alphanumeric entries i.e. !"!Â£"$%$$%^&*&(*)()_+><? (I would run this first)
+```bash
+cat wordlistfile | sed 's/[^a-zA-Z0-9]//g' > newfile
+```
+
+### To convert all to lowercase
+```bash
+tr '[:upper:]' '[:lower:]' < inputfile > outputfile 
+```
+
+### Vim
+```bash
+vim user.txt 	#	(We can create a way of creating username will recording and can apply it to the other user)
+
+	qa	# (It will start recording)
+	q	# (It will stop recoeding)
+	@a	# (It will paste according to the recording)
+
+ 	%s/ $//g	# (To remove space at end of the line)
 ```
 
 ## Nmap result 
