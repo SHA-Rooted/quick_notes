@@ -22,10 +22,11 @@ stty -a
 ## Set the current STTY to type raw and tell it to echo the input characters	
 ```bash
 stty raw -echo
-# or In zsh shell use
-stty raw -echo; fg
-#   Press enter
 ```
+> **Special Note** 
+> If your are using zsh terminal then you have to use 
+> `stty raw -echo; fg` at the same time.
+
 ## Foreground the shell with fg and re-open the shell with reset
 ```bash	
 fg
