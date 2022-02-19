@@ -10,6 +10,11 @@ Notes
 
 Commands :-  
 
+- To add user in Docker group 
+```
+sudo usermod -aG docker $USER
+```
+
 - shows the existing containers
 ```bash
 docker ps -a 
